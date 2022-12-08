@@ -1,2 +1,1 @@
-# Finet
-Finet Application
+# Bank App
