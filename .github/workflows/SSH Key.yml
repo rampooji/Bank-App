@@ -1,16 +1,17 @@
-name: push
+name: Performing push
 on:
   push:
   workflow_dispatch:
+#testing the job
 jobs:
-  package:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name:Install SSH key
-        uses:shimataro/ssh-key-action@V2
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{secrets.SSH_PRIVATE_KEY}}
-          known_hosts:'just-a-placehoder-so-we-dont-get-errors'
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
          
       
  
