@@ -1,4 +1,5 @@
-push:
+name: Performing push
+on:push:
   workflow_dispatch: 
  #testing the job
 jobs:
@@ -15,8 +16,9 @@ jobs:
       - name: cloning the repo
         uses: actions/checkout@v3
       - name: Deploy with rsync
-        run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/ 
-name: learn-github-actions
+        run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/dist/
+---
+ - name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
